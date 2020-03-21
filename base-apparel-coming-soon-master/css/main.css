@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:200,400,600&display=swap");
+
+body {
+  background-image: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 98%)
+  );
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left {
+  background-image: url("/images/bg-pattern-desktop.svg");
+  background-position: center center;
+  width: 60%;
+  padding: 0 40px;
+}
+
+.inner-container {
+  max-width: 450px;
+  margin: auto;
+}
+
+.right {
+  width: 40%;
+}
+
+.bg-image {
+  background-image: url("/images/hero-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.logo {
+  margin: 40px 0 80px;
+  width: 200px;
+}
+
+.bg-mobile {
+  display: none;
+}
+
+h1 {
+  color: hsl(0, 6%, 24%);
+  font-size: 60px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 0;
+  transform: translateX(-200%);
+  animation: comeInLeft 0.8s ease-in-out forwards;
+}
+
+h1 span {
+  color: hsl(0, 36%, 70%);
+  font-weight: 200;
+}
+
+p {
+  color: hsl(0, 31%, 58%);
+  line-height: 26px;
+  letter-spacing: 1px;
+  margin: 30px 0;
+  transform: translateX(200%);
+  opacity: 0;
+  animation: comeInRight 0.8s ease-in-out forwards;
+}
+
+form {
+  position: relative;
+  /* width: 300px; */
+  transform: translateY(800%);
+  animation: comeInBottom 0.8s ease-in-out forwards;
+}
+
+form.error {
+  display: block;
+}
+
+input {
+  background-color: transparent;
+  border: 2px solid hsl(0, 36%, 70%);
+  border-radius: 50px;
+  padding: 15px 30px;
+  font-size: 16px;
+  width: 90%;
+}
+
+input:focus {
+  border-width: 3px;
+  outline: none;
+  box-shadow: 2px 5px 10px hsla(0, 36%, 70%, 0.5);
+}
+
+input::placeholder {
+  color: hsl(0, 36%, 70%);
+}
+
+form.error input {
+  border: 3px solid hsl(0, 93%, 68%);
+}
+
+form.success input {
+  border: 3px solid hsl(81, 53%, 40%);
+}
+
+.error-icon {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 115px;
+}
+
+form.error .error-icon {
+  display: block;
+}
+
+button {
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  box-shadow: 2px 5px 10px hsla(0, 36%, 70%, 0.5);
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  right: -30px;
+  width: 100px;
+}
+
+button:hover {
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 84%, 63%));
+  cursor: pointer;
+}
+
+small {
+  color: hsl(0, 93%, 68%);
+  display: none;
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+form.error small {
+  display: block;
+}
+
+/* Animations */
+@keyframes comeInLeft {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes comeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes comeInBottom {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Mobile */
+@media screen and (max-width: 600px) {
+  .bg-mobile {
+    display: block;
+    margin-left: -40px;
+    margin-right: -40px;
+    width: calc(100% + 80px);
+  }
+
+  .logo {
+    margin: 30px 0;
+    width: 120px;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    display: none;
+  }
+}
