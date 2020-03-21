@@ -1,2 +1,5 @@
 # front-end-mentor-challenges
-Front End Challenges done with HTML, CSS &amp; JS for practicing and adding to my portfolio
+
+My submissions for the FrontEnd Mentor Challenges
+
+See it [live](https://priceless-fermat-db4341.netlify.com/)
